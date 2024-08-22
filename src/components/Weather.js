@@ -1,8 +1,4 @@
 function Weather() {
-  return (
-    <>
-      <h1> weatherrr </h1>{" "}
-    </>
-  );
+  return <></>;
 }
 export default Weather;

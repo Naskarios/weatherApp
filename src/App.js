@@ -1,19 +1,22 @@
-import "./App.css";
+import "./App.scss";
 import "bootstrap/dist/css/bootstrap.css";
 
 import Weather from "./components/Weather";
 import Search from "./components/Search";
 
 function App() {
+  const handleonSearchChange = (searchData) => {
+    console.log("hi");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <Search> </Search> <Weather> </Weather> <h2> Location </h2>{" "}
-        <h3> date </h3> <h1> celsius </h1>{" "}
-      </header>{" "}
+    <div className="container">
+      <Search onSearchChange={handleonSearchChange}> </Search>{" "}
+      <Weather> </Weather>{" "}
     </div>
   );
 }
 
 export default App;
 //https://www.youtube.com/watch?v=Reny0cTTv24
+//https://stackoverflow.com/questions/55729132/why-is-my-css-not-applying-to-my-react-components
+// the npm install node-sass --save didnt work,remove .scss and the dependency
