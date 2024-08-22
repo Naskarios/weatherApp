@@ -16,7 +16,7 @@ function Search({ onSearchChange }) {
   // chatGPT fixed it
   //https://chatgpt.com/share/e6dd2daf-519a-48d0-a4bb-40d3785c2ca2
   const loadOptions = async (inputValue) => {
-    //4.
+    //4. (look down)
     try {
       const response = await fetch(
         `${GEO_API_URL}&namePrefix=${inputValue}`,
@@ -46,11 +46,11 @@ function Search({ onSearchChange }) {
     <>
       {" "}
       {/* <input 
-                                                                                                                                                        type="text"
-                                                                                                                                                        name="locationInput"
-                                                                                                                                                        placeholder="Search..."
-                                                                                                                                                        className="alert alert-primary"
-                                                                                                                                                      ></input>{" "} */}{" "}
+                                                                                                                                                                                type="text"
+                                                                                                                                                                                name="locationInput"
+                                                                                                                                                                                placeholder="Search..."
+                                                                                                                                                                                className="alert alert-primary"
+                                                                                                                                                                              ></input>{" "} */}{" "}
       <AsyncPaginate
         placeholder="Search for a city"
         //every 600ms we send a request to the API
@@ -58,7 +58,7 @@ function Search({ onSearchChange }) {
         debounceTimeout={600}
         value={search} //1.
         onChange={handleOnChange} //2.
-        loadOptions={loadOptions} //3.
+        loadOptions={loadOptions} //3. (look up)
       ></AsyncPaginate>{" "}
     </>
   );

@@ -1,7 +1,7 @@
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.css";
 
-import Weather from "./components/Weather";
+import Weather from "./components/weather/Weather";
 import Search from "./components/Search";
 
 function App() {
