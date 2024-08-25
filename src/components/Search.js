@@ -27,8 +27,20 @@ function Search({ onSearchChange }) {
       // Map the result to the format expected by AsyncPaginate
       const options = result.data.map((city) => ({
         value: `${city.id} ${city.latitude} ${city.longitude}`,
-        label: `Blepeis: ${city.name}, ${city.countryCode}`, //the user can see this,in the dropdown
+        label: `Look: ${city.name}, ${city.countryCode}`, //the user can see this,in the dropdown
       }));
+
+      //Loggin the object for debugging purposes
+      console.log("Input:", inputValue);
+      console.log("Options:", options);
+      //I tried using template literals but it didnt work
+      //then gpt replied
+      //What it does: In this form, ${options} is a template literal.
+      //It converts the options object to a string representation and
+      //concatenates it with the string 'Options: '.
+      //This is equivalent to calling options.toString().
+      // This can sometimes lead to [object Object] being printed if the options variable is an object,
+      //because JavaScript’s default string conversion for objects results in the string [object Object].
 
       // Return the options object
       return {
@@ -46,11 +58,11 @@ function Search({ onSearchChange }) {
     <>
       {" "}
       {/* <input 
-                                                                                                                                                                                type="text"
-                                                                                                                                                                                name="locationInput"
-                                                                                                                                                                                placeholder="Search..."
-                                                                                                                                                                                className="alert alert-primary"
-                                                                                                                                                                              ></input>{" "} */}{" "}
+              type="text"
+              name="locationInput"
+              placeholder="Search..."
+              className="alert alert-primary"
+        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></input>{" "} */}{" "}
       <AsyncPaginate
         placeholder="Search for a city"
         //every 600ms we send a request to the API
