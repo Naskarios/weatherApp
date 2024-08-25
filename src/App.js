@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Weather from "./components/weather/Weather";
 import Search from "./components/Search";
+import Forecast from "./components/Forecast";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./components/api";
 
 function App() {
@@ -20,7 +21,6 @@ function App() {
     const currentWeatherFetch = fetch(
       `${WEATHER_API_URL}/weather?lat=${cityLat}&lon=${cityLon}&appid=${WEATHER_API_KEY}&units=metric`
     );
-
     const currentWeatherForecastFetch = fetch(
       `${WEATHER_API_URL}forecast?lat=${cityLat}&lon=${cityLon}&appid=${WEATHER_API_KEY}&units=metric`
     );
@@ -39,20 +39,25 @@ function App() {
       .catch((err) => console.log(err));
   };
   // logging the response
-  console.log("YURRRRR ", currentWeather);
+  // console.log("YURRRRR ", currentWeather);
+  console.log("YURRRRR ", currentWeatherForecast);
   // 54.08
   return (
     <div className="container">
       <Search onSearchChange={handleonSearchChange}> </Search>{" "}
       {
         //error prevention excecute only if currentWeather exists
+        //it also makes the component pop up when the user gives input
       }
       {currentWeather && <Weather data={currentWeather} />}
+      {currentWeatherForecast && (
+        <Forecast dataFromAPI={currentWeatherForecast} />
+      )}
+      {/* <Forecast data={currentWeatherForecast} /> */}
     </div>
   );
 }
 
 export default App;
-//https://www.youtube.com/watch?v=Reny0cTTv24
 //https://stackoverflow.com/questions/55729132/why-is-my-css-not-applying-to-my-react-components
 // the npm install node-sass --save didnt work,remove .scss and the dependency

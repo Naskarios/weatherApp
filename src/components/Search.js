@@ -27,7 +27,7 @@ function Search({ onSearchChange }) {
       // Map the result to the format expected by AsyncPaginate
       const options = result.data.map((city) => ({
         value: `${city.id} ${city.latitude} ${city.longitude}`,
-        label: `Look: ${city.name}, ${city.countryCode}`, //the user can see this,in the dropdown
+        label: ` ${city.name}, ${city.countryCode}`, //the user can see this,in the dropdown
       }));
 
       //Loggin the object for debugging purposes
