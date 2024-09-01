@@ -48,6 +48,7 @@ function App() {
   // 54.08
   return (
     <div className="container">
+      <h1> React Weather App </h1>{" "}
       <Search onSearchChange={handleonSearchChange}> </Search>{" "}
       {
         //error prevention excecute only if currentWeather exists
