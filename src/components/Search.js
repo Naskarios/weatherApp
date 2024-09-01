@@ -56,13 +56,6 @@ function Search({ onSearchChange }) {
 
   return (
     <>
-      {" "}
-      {/* <input 
-              type="text"
-              name="locationInput"
-              placeholder="Search..."
-              className="alert alert-primary"
-        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></input>{" "} */}{" "}
       <AsyncPaginate
         placeholder="Search for a city"
         //every 600ms we send a request to the API
